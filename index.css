@@ -33,10 +33,7 @@ a:hover {
 body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  margin-bottom: var(--margin-vertical);
-  margin-left: var(--margin-horizontal);
-  margin-right: var(--margin-horizontal);
-  margin-top: var(--margin-vertical);
+  margin: var(--margin-vertical) var(--margin-horizontal);
 }
 
 body > * {
@@ -48,7 +45,7 @@ body > div {
   text-shadow: 0 0 5px #fff;
 }
 
-body > a {
+body > a:nth-child(n+5) {
   align-items: center;
   display: flex;
   font-size: calc(var(--size) / 9);
