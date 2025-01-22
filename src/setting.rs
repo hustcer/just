@@ -11,6 +11,7 @@ pub(crate) enum Setting<'src> {
   Export(bool),
   Fallback(bool),
   IgnoreComments(bool),
+  NoExitMessage(bool),
   PositionalArguments(bool),
   Quiet(bool),
   ScriptInterpreter(Interpreter<'src>),
@@ -22,7 +23,7 @@ pub(crate) enum Setting<'src> {
   WorkingDirectory(StringLiteral<'src>),
 }
 
-impl<'src> Display for Setting<'src> {
+impl Display for Setting<'_> {
   fn fmt(&self, f: &mut Formatter) -> fmt::Result {
     match self {
       Self::AllowDuplicateRecipes(value)
@@ -32,6 +33,7 @@ impl<'src> Display for Setting<'src> {
       | Self::Export(value)
       | Self::Fallback(value)
       | Self::IgnoreComments(value)
+      | Self::NoExitMessage(value)
       | Self::PositionalArguments(value)
       | Self::Quiet(value)
       | Self::Unstable(value)

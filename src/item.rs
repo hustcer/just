@@ -13,9 +13,9 @@ pub(crate) enum Item<'src> {
     relative: StringLiteral<'src>,
   },
   Module {
-    attributes: BTreeSet<Attribute<'src>>,
     absolute: Option<PathBuf>,
-    doc: Option<&'src str>,
+    doc: Option<String>,
+    groups: Vec<String>,
     name: Name<'src>,
     optional: bool,
     relative: Option<StringLiteral<'src>>,
@@ -27,7 +27,7 @@ pub(crate) enum Item<'src> {
   },
 }
 
-impl<'src> Display for Item<'src> {
+impl Display for Item<'_> {
   fn fmt(&self, f: &mut Formatter) -> fmt::Result {
     match self {
       Self::Alias(alias) => write!(f, "{alias}"),

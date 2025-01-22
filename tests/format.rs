@@ -1096,3 +1096,81 @@ fn multi_argument_attribute() {
     )
     .run();
 }
+
+#[test]
+fn doc_attribute_suppresses_comment() {
+  Test::new()
+    .justfile(
+      "
+        set unstable
+
+        # COMMENT
+        [doc('ATTRIBUTE')]
+        foo:
+      ",
+    )
+    .arg("--dump")
+    .stdout(
+      "
+        set unstable := true
+
+        [doc('ATTRIBUTE')]
+        foo:
+      ",
+    )
+    .run();
+}
+
+#[test]
+fn unchanged_justfiles_are_not_written_to_disk() {
+  let tmp = tempdir();
+
+  let justfile = tmp.path().join("justfile");
+
+  fs::write(&justfile, "").unwrap();
+
+  let mut permissions = fs::metadata(&justfile).unwrap().permissions();
+  permissions.set_readonly(true);
+  fs::set_permissions(&justfile, permissions).unwrap();
+
+  Test::with_tempdir(tmp)
+    .no_justfile()
+    .args(["--fmt", "--unstable"])
+    .run();
+}
+
+#[test]
+fn if_else() {
+  Test::new()
+    .justfile(
+      "
+        x := if '' == '' { '' } else if '' == '' { '' } else { '' }
+      ",
+    )
+    .arg("--dump")
+    .stdout(
+      "
+        x := if '' == '' { '' } else if '' == '' { '' } else { '' }
+      ",
+    )
+    .run();
+}
+
+#[test]
+fn private_variable() {
+  Test::new()
+    .justfile(
+      "
+        [private]
+        foo := 'bar'
+      ",
+    )
+    .arg("--dump")
+    .stdout(
+      "
+        [private]
+        foo := 'bar'
+      ",
+    )
+    .run();
+}

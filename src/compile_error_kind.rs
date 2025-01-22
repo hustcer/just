@@ -47,6 +47,9 @@ pub(crate) enum CompileErrorKind<'src> {
   DuplicateUnexport {
     variable: &'src str,
   },
+  ExitMessageAndNoExitMessageAttribute {
+    recipe: &'src str,
+  },
   ExpectedKeyword {
     expected: Vec<Keyword>,
     found: Token<'src>,
@@ -87,6 +90,9 @@ pub(crate) enum CompileErrorKind<'src> {
   MixedLeadingWhitespace {
     whitespace: &'src str,
   },
+  NoCdAndWorkingDirectoryAttribute {
+    recipe: &'src str,
+  },
   ParameterFollowsVariadicParameter {
     parameter: &'src str,
   },
@@ -104,13 +110,13 @@ pub(crate) enum CompileErrorKind<'src> {
     variable: &'src str,
   },
   UnexpectedCharacter {
-    expected: char,
+    expected: Vec<char>,
   },
   UnexpectedClosingDelimiter {
     close: Delimiter,
   },
   UnexpectedEndOfToken {
-    expected: char,
+    expected: Vec<char>,
   },
   UnexpectedToken {
     expected: Vec<TokenKind>,

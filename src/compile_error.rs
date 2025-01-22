@@ -121,6 +121,10 @@ impl Display for CompileError<'_> {
       DuplicateUnexport { variable } => {
         write!(f, "Variable `{variable}` is unexported multiple times")
       }
+      ExitMessageAndNoExitMessageAttribute { recipe } => write!(
+        f,
+        "Recipe `{recipe}` has both `[exit-message]` and `[no-exit-message]` attributes"
+      ),
       ExpectedKeyword { expected, found } => {
         let expected = List::or_ticked(expected);
         if found.kind == TokenKind::Identifier {
@@ -203,6 +207,10 @@ impl Display for CompileError<'_> {
            consist of tabs or spaces, but not both",
         ShowWhitespace(whitespace)
       ),
+      NoCdAndWorkingDirectoryAttribute { recipe } => write!(
+        f,
+        "Recipe `{recipe}` has both `[no-cd]` and `[working-directory]` attributes"
+      ),
       ParameterFollowsVariadicParameter { parameter } => {
         write!(f, "Parameter `{parameter}` follows variadic parameter")
       }
@@ -242,12 +250,18 @@ impl Display for CompileError<'_> {
         "Non-default parameter `{parameter}` follows default parameter"
       ),
       UndefinedVariable { variable } => write!(f, "Variable `{variable}` not defined"),
-      UnexpectedCharacter { expected } => write!(f, "Expected character `{expected}`"),
+      UnexpectedCharacter { expected } => {
+        write!(f, "Expected character {}", List::or_ticked(expected))
+      }
       UnexpectedClosingDelimiter { close } => {
         write!(f, "Unexpected closing delimiter `{}`", close.close())
       }
       UnexpectedEndOfToken { expected } => {
-        write!(f, "Expected character `{expected}` but found end-of-file")
+        write!(
+          f,
+          "Expected character {} but found end-of-file",
+          List::or_ticked(expected),
+        )
       }
       UnexpectedToken {
         ref expected,

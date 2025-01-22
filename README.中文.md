@@ -165,12 +165,150 @@ list:
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td><a href=https://www.freebsd.org>FreeBSD</a></td>
-      <td><a href=https://www.freebsd.org/doc/handbook/pkgng-intro.html>pkg</a></td>
-      <td><a href=https://www.freshports.org/deskutils/just/>just</a></td>
-      <td><code>pkg install just</code></td>
-    </tr>
+  <tr>
+    <td><a href="https://forge.rust-lang.org/release/platform-support.html">Various</a></td>
+    <td><a href="https://www.rust-lang.org">Cargo</a></td>
+    <td><a href="https://crates.io/crates/just">just</a></td>
+    <td><code>cargo install just</code></td>
+  </tr>
+  <tr>
+    <td><a href="https://en.wikipedia.org/wiki/Microsoft_Windows">Microsoft Windows</a></td>
+    <td><a href="https://scoop.sh">Scoop</a></td>
+    <td><a href="https://github.com/ScoopInstaller/Main/blob/master/bucket/just.json">just</a></td>
+    <td><code>scoop install just</code></td>
+  </tr>
+  <tr>
+    <td><a href="https://docs.brew.sh/Installation">Various</a></td>
+    <td><a href="https://brew.sh">Homebrew</a></td>
+    <td><a href="https://formulae.brew.sh/formula/just">just</a></td>
+    <td><code>brew install just</code></td>
+  </tr>
+  <tr>
+    <td><a href="https://en.wikipedia.org/wiki/MacOS">macOS</a></td>
+    <td><a href="https://www.macports.org">MacPorts</a></td>
+    <td><a href="https://ports.macports.org/port/just/summary">just</a></td>
+    <td><code>port install just</code></td>
+  </tr>
+  <tr>
+    <td><a href="https://www.archlinux.org">Arch Linux</a></td>
+    <td><a href="https://wiki.archlinux.org/title/Pacman">pacman</a></td>
+    <td><a href="https://archlinux.org/packages/community/x86_64/just/">just</a></td>
+    <td><code>pacman -S just</code></td>
+  </tr>
+  <tr>
+    <td><a href="https://nixos.org/download.html#download-nix">Various</a></td>
+    <td><a href="https://nixos.org/nix/">Nix</a></td>
+    <td><a href="https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ju/just/package.nix">just</a></td>
+    <td><code>nix-env -iA nixpkgs.just</code></td>
+  </tr>
+  <tr>
+    <td><a href="https://nixos.org/nixos/">NixOS</a></td>
+    <td><a href="https://nixos.org/nix/">Nix</a></td>
+    <td><a href="https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ju/just/package.nix">just</a></td>
+    <td><code>nix-env -iA nixos.just</code></td>
+  </tr>
+  <tr>
+    <td><a href="https://getsol.us">Solus</a></td>
+    <td><a href="https://getsol.us/articles/package-management/basics/en">eopkg</a></td>
+    <td><a href="https://dev.getsol.us/source/just/">just</a></td>
+    <td><code>eopkg install just</code></td>
+  </tr>
+  <tr>
+    <td><a href="https://voidlinux.org">Void Linux</a></td>
+    <td><a href="https://wiki.voidlinux.org/XBPS">XBPS</a></td>
+    <td><a href="https://github.com/void-linux/void-packages/blob/master/srcpkgs/just/template">just</a></td>
+    <td><code>xbps-install -S just</code></td>
+  </tr>
+  <tr>
+    <td><a href="https://www.freebsd.org">FreeBSD</a></td>
+    <td><a href="https://www.freebsd.org/doc/handbook/pkgng-intro.html">pkg</a></td>
+    <td><a href="https://www.freshports.org/deskutils/just/">just</a></td>
+    <td><code>pkg install just</code></td>
+  </tr>
+  <tr>
+    <td><a href="https://alpinelinux.org">Alpine Linux</a></td>
+    <td><a href="https://wiki.alpinelinux.org/wiki/Alpine_Linux_package_management">apk-tools</a></td>
+    <td><a href="https://pkgs.alpinelinux.org/package/edge/community/x86_64/just">just</a></td>
+    <td><code>apk add just</code></td>
+  </tr>
+  <tr>
+    <td><a href="https://getfedora.org">Fedora Linux</a></td>
+    <td><a href="https://dnf.readthedocs.io/en/latest/">DNF</a></td>
+    <td><a href="https://src.fedoraproject.org/rpms/rust-just">just</a></td>
+    <td><code>dnf install just</code></td>
+  </tr>
+  <tr>
+    <td><a href="https://www.gentoo.org">Gentoo Linux</a></td>
+    <td><a href="https://wiki.gentoo.org/wiki/Portage">Portage</a></td>
+    <td><a href="https://github.com/gentoo-mirror/guru/tree/master/sys-devel/just">guru/sys-devel/just</a></td>
+    <td>
+      <code>eselect repository enable guru</code><br>
+      <code>emerge --sync guru</code><br>
+      <code>emerge sys-devel/just</code>
+    </td>
+  </tr>
+  <tr>
+    <td><a href="https://docs.conda.io/en/latest/miniconda.html#system-requirements">Various</a></td>
+    <td><a href="https://docs.conda.io/projects/conda/en/latest/index.html">Conda</a></td>
+    <td><a href="https://anaconda.org/conda-forge/just">just</a></td>
+    <td><code>conda install -c conda-forge just</code></td>
+  </tr>
+  <tr>
+    <td><a href="https://en.wikipedia.org/wiki/Microsoft_Windows">Microsoft Windows</a></td>
+    <td><a href="https://chocolatey.org">Chocolatey</a></td>
+    <td><a href="https://github.com/michidk/just-choco">just</a></td>
+    <td><code>choco install just</code></td>
+  </tr>
+  <tr>
+    <td><a href="https://snapcraft.io/docs/installing-snapd">Various</a></td>
+    <td><a href="https://snapcraft.io">Snap</a></td>
+    <td><a href="https://snapcraft.io/just">just</a></td>
+    <td><code>snap install --edge --classic just</code></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/casey/just/releases">Various</a></td>
+    <td><a href="https://asdf-vm.com">asdf</a></td>
+    <td><a href="https://github.com/olofvndrhr/asdf-just">just</a></td>
+    <td>
+      <code>asdf plugin add just</code><br>
+      <code>asdf install just &lt;version&gt;</code>
+    </td>
+  </tr>
+  <tr>
+    <td><a href="https://packaging.python.org/tutorials/installing-packages">Various</a></td>
+    <td><a href="https://pypi.org">PyPI</a></td>
+    <td><a href="https://pypi.org/project/rust-just">rust-just</a></td>
+    <td>
+      <code>pipx install rust-just</code><br>
+    </td>
+  </tr>
+  <tr>
+    <td><a href="https://docs.npmjs.com/packages-and-modules/getting-packages-from-the-registry">Various</a></td>
+    <td><a href="https://www.npmjs.com">npm</a></td>
+    <td><a href="https://www.npmjs.com/package/rust-just">rust-just</a></td>
+    <td>
+      <code>npm install -g rust-just</code><br>
+    </td>
+  </tr>
+  <tr>
+    <td><a href="https://debian.org">Debian</a> and <a href="https://ubuntu.com">Ubuntu</a> derivatives</td>
+    <td><a href="https://mpr.makedeb.org">MPR</a></td>
+    <td><a href="https://mpr.makedeb.org/packages/just">just</a></td>
+    <td>
+      <code>git clone 'https://mpr.makedeb.org/just'</code><br>
+      <code>cd just</code><br>
+      <code>makedeb -si</code>
+    </td>
+  </tr>
+  <tr>
+    <td><a href="https://debian.org">Debian</a> and <a href="https://ubuntu.com">Ubuntu</a> derivatives</td>
+    <td><a href="https://docs.makedeb.org/prebuilt-mpr">Prebuilt-MPR</a></td>
+    <td><a href="https://mpr.makedeb.org/packages/just">just</a></td>
+    <td>
+      <sup><b>You must have the <a href="https://docs.makedeb.org/prebuilt-mpr/getting-started/#setting-up-the-repository">Prebuilt-MPR set up</a> on your system in order to run this command.</b></sup><br>
+      <code>sudo apt install just</code>
+    </td>
+  </tr>
   </tbody>
 </table>
 
@@ -691,6 +829,911 @@ Available recipes:
 ····test
 ····build
 ```
+
+`--list-heading` 参数同时替换了标题和后面的换行，所以如果不是空的，应该包含一个换行。这样做是为了允许你通过传递空字符串来完全抑制标题行：
+
+```sh
+$ just --list --list-heading ''
+    test
+    build
+```
+
+### 别名
+
+别名允许你用其他名称来调用配方：
+
+```just
+alias b := build
+
+build:
+  echo 'Building!'
+```
+
+```sh
+$ just b
+build
+echo 'Building!'
+Building!
+```
+
+### 设置
+
+设置控制解释和执行。每个设置最多可以指定一次，可以出现在 `justfile` 的任何地方。
+
+例如：
+
+```just
+set shell := ["zsh", "-cu"]
+
+foo:
+  # this line will be run as `zsh -cu 'ls **/*.txt'`
+  ls **/*.txt
+```
+
+#### 设置一览表
+
+| 名称                        | 值                 | 默认  | 描述                                                                                    |
+| --------------------------- | ------------------ | ----- | --------------------------------------------------------------------------------------- |
+| `allow-duplicate-recipes`   | boolean            | False | 允许在 `justfile` 后面出现的配方覆盖之前的同名配方                                      |
+| `allow-duplicate-variables` | boolean            | False | 允许在 `justfile` 后面出现的变量覆盖之前的同名变量                                      |
+| `dotenv-filename`           | string             | -     | 如果有自定义名称的 `.env` 环境变量文件的话，则将其加载                                  |
+| `dotenv-load`               | boolean            | False | 如果有`.env` 环境变量文件的话，则将其加载                                               |
+| `dotenv-path`               | string             | -     | 从自定义路径中加载 `.env` 环境变量文件， 文件不存在将会报错。可以覆盖 `dotenv-filename` |
+| `dotenv-required`           | boolean            | False | 如果 `.env` 环境变量文件不存在的话，需要报错                                                         |
+| `export`                    | boolean            | False | 将所有变量导出为环境变量                                                                |
+| `fallback`                  | boolean            | False | 如果命令行中的第一个配方没有找到，则在父目录中搜索 `justfile`                           |
+| `ignore-comments`           | boolean            | False | 忽略以`#`开头的配方行                                                                   |
+| `positional-arguments`      | boolean            | False | 传递位置参数                                                                            |
+| `shell`                     | `[COMMAND, ARGS…]` | -     | 设置用于调用配方和评估反引号内包裹内容的命令                                            |
+| `tempdir`                   | string             | -     | 在 `tempdir` 位置创建临时目录，而不是系统默认的临时目录                                 |
+| `windows-powershell`        | boolean            | False | 在 Windows 上使用 PowerShell 作为默认 Shell(废弃，建议使用 `windows-shell`)             |
+| `windows-shell`             | `[COMMAND, ARGS…]` | -     | 设置用于调用配方和评估反引号内包裹内容的命令                                            |
+
+Bool 类型设置可以写成：
+
+```justfile
+set NAME
+```
+
+这就相当于：
+
+```justfile
+set NAME := true
+```
+
+#### 允许重复的配方
+
+如果 `allow-duplicate-recipes` 被设置为 `true`，那么定义多个同名的配方就不会出错，而会使用最后的定义。默认为 `false`。
+
+```just
+set allow-duplicate-recipes
+
+@foo:
+  echo foo
+
+@foo:
+  echo bar
+```
+
+```sh
+$ just foo
+bar
+```
+
+#### 允许重复的变量
+如果 `allow-duplicate-variables` 被设置为 `true`，那么定义多个同名的变量将不会报错。默认为 `false`。
+
+```just
+set allow-duplicate-variables
+
+a := "foo"
+a := "bar"
+
+@foo:
+  echo $a
+```
+
+```sh
+$ just foo
+bar
+```
+
+#### 环境变量加载
+
+如果 `dotenv-load`, `dotenv-filename`, `dotenv-path`, or `dotenv-required`
+中任意一项被设置, `just` 会尝试从文件中加载环境变量
+
+如果设置了 `dotenv-path`, `just` 会在指定的路径下搜索文件，该路径可以是绝对路径，
+也可以是基于当前工作路径的相对路径
+
+如果设置了 `dotenv-filename`，`just` 会在指定的相对路径，以及其所有的上层目录中，搜索指定文件
+
+如果没有设置 `dotenv-filename`，但是设置了 `dotenv-load` 或 `dotenv-required`，
+`just` 会在当前工作路径，以及其所有的上层目录中，寻找名为 `.env` 的文件。
+
+`dotenv-filename` 和 `dotenv-path` 很相似，但是 `dotenv-path` 只会检查指定的目录
+而 `dotenv-filename` 会检查指定目录以及其所有的上层目录。
+
+如果没有找到环境变量文件也不会报错，除非设置了 `dotenv-required`。
+
+从文件中加载的变量是环境变量，而非 `just` 变量，所以在配方和反引号中需要必须通过 `$VARIABLE_NAME` 来调用。
+
+比如，如果你的 `.env` 文件包含以下内容：
+
+```sh
+# a comment, will be ignored
+DATABASE_ADDRESS=localhost:6379
+SERVER_PORT=1337
+```
+
+并且你的 `justfile` 包含：
+
+```just
+set dotenv-load
+
+serve:
+  @echo "Starting server with database $DATABASE_ADDRESS on port $SERVER_PORT…"
+  ./server --database $DATABASE_ADDRESS --port $SERVER_PORT
+```
+
+`just serve` 将会输出：
+
+```sh
+$ just serve
+Starting server with database localhost:6379 on port 1337…
+./server --database $DATABASE_ADDRESS --port $SERVER_PORT
+```
+
+#### 导出
+
+`export` 设置使所有 `just` 变量作为环境变量被导出。默认值为 `false`。
+
+```just
+set export
+
+a := "hello"
+
+@foo b:
+  echo $a
+  echo $b
+```
+
+```sh
+$ just foo goodbye
+hello
+goodbye
+```
+
+#### 位置参数
+
+如果 `positional-arguments` 为 `true`，配方参数将作为位置参数传递给命令。对于行式配方，参数 `$0` 将是配方的名称。
+
+例如，运行这个配方：
+
+```just
+set positional-arguments
+
+@foo bar:
+  echo $0
+  echo $1
+```
+
+将产生以下输出：
+
+```sh
+$ just foo hello
+foo
+hello
+```
+
+当使用 `sh` 兼容的 Shell，如 `bash` 或 `zsh` 时，`$@` 会展开为传给配方的位置参数，从1开始。当在双引号内使用 `"$@"` 时，包括空白的参数将被传递，就像它们是双引号一样。也就是说，`"$@"` 相当于 `"$1" "$2"`......当没有位置参数时，`"$@"` 和 `$@` 将展开为空（即，它们被删除）。
+
+这个例子的配方将逐行打印参数：
+
+```just
+set positional-arguments
+
+@test *args='':
+  bash -c 'while (( "$#" )); do echo - $1; shift; done' -- "$@"
+```
+
+用 _两个_ 参数运行：
+
+```sh
+$ just test foo "bar baz"
+- foo
+- bar baz
+```
+
+#### Shell
+
+`shell` 设置控制用于调用执行配方代码行和反引号内指令的命令。Shebang 配方不受影响。
+
+```just
+# use python3 to execute recipe lines and backticks
+set shell := ["python3", "-c"]
+
+# use print to capture result of evaluation
+foos := `print("foo" * 4)`
+
+foo:
+  print("Snake snake snake snake.")
+  print("{{foos}}")
+```
+
+`just` 把要执行的命令作为一个参数进行传递。许多 Shell 需要一个额外的标志，通常是 `-c`，以使它们评估执行第一个参数。
+
+##### Windows Shell
+
+`just` 在 Windows 上默认使用 `sh`。要在 Windows 上使用不同的 Shell，请使用`windows-shell`：
+
+```just
+set windows-shell := ["powershell.exe", "-NoLogo", "-Command"]
+
+hello:
+  Write-Host "Hello, world!"
+```
+
+参考 [powershell.just](https://github.com/casey/just/blob/master/examples/powershell.just) ，了解在所有平台上使用 PowerShell 的 justfile。
+
+##### Windows PowerShell
+
+*`set windows-powershell` 使用遗留的 `powershell.exe` 二进制文件，不再推荐。请参阅上面的 `windows-shell` 设置，以通过更灵活的方式来控制在 Windows 上使用哪个 Shell。*
+
+`just` 在 Windows 上默认使用 `sh`。要使用 `powershell.exe` 作为替代，请将 `windows-powershell` 设置为 `true`。
+
+```just
+set windows-powershell := true
+
+hello:
+  Write-Host "Hello, world!"
+```
+
+##### Python 3
+
+```just
+set shell := ["python3", "-c"]
+```
+
+##### Bash
+
+```just
+set shell := ["bash", "-uc"]
+```
+
+##### Z Shell
+
+```just
+set shell := ["zsh", "-uc"]
+```
+
+##### Fish
+
+```just
+set shell := ["fish", "-c"]
+```
+
+##### Nushell
+
+```just
+set shell := ["nu", "-c"]
+```
+
+如果你想设置默认的表格显示模式为 `light`:
+
+```just
+set shell := ['nu', '-m', 'light', '-c']
+```
+
+*[Nushell](https://github.com/nushell/nushell) 使用 Rust 开发并且具备良好的跨平台能力，**支持 Windows / macOS 和各种 Linux 发行版***
+
+### 文档注释
+
+紧接着配方前面的注释将出现在 `just --list` 中：
+
+```just
+# build stuff
+build:
+  ./bin/build
+
+# test stuff
+test:
+  ./bin/test
+```
+
+```sh
+$ just --list
+Available recipes:
+    build # build stuff
+    test # test stuff
+```
+
+### 变量和替换
+
+支持在变量、字符串、拼接、路径连接和替换中使用 `{{…}}` ：
+
+```just
+tmpdir  := `mktemp -d`
+version := "0.2.7"
+tardir  := tmpdir / "awesomesauce-" + version
+tarball := tardir + ".tar.gz"
+
+publish:
+  rm -f {{tarball}}
+  mkdir {{tardir}}
+  cp README.md *.c {{tardir}}
+  tar zcvf {{tarball}} {{tardir}}
+  scp {{tarball}} me@server.com:release/
+  rm -rf {{tarball}} {{tardir}}
+```
+
+#### 路径拼接
+
+`/` 操作符可用于通过斜线连接两个字符串：
+
+```just
+foo := "a" / "b"
+```
+
+```
+$ just --evaluate foo
+a/b
+```
+
+请注意，即使已经有一个 `/`，也会添加一个 `/`：
+
+```just
+foo := "a/"
+bar := foo / "b"
+```
+
+```
+$ just --evaluate bar
+a//b
+```
+
+也可以构建绝对路径<sup>1.5.0</sup>:
+
+```just
+foo := / "b"
+```
+
+```
+$ just --evaluate foo
+/b
+```
+
+`/` 操作符使用 `/` 字符，即使在 Windows 上也是如此。因此，在使用通用命名规则（UNC）的路径中应避免使用 `/` 操作符，即那些以 `\?` 开头的路径，因为 UNC 路径不支持正斜线。
+
+#### 转义 `{{`
+
+想要写一个包含  `{{` 的配方，可以使用 `{{{{`：
+
+```just
+braces:
+  echo 'I {{{{LOVE}} curly braces!'
+```
+
+(未匹配的 `}}` 会被忽略，所以不需要转义)
+
+另一个选择是把所有你想转义的文本都放在插值里面：
+
+```just
+braces:
+  echo '{{'I {{LOVE}} curly braces!'}}'
+```
+
+然而，另一个选择是使用  `{{ "{{" }}`：
+
+```just
+braces:
+  echo 'I {{ "{{" }}LOVE}} curly braces!'
+```
+
+### 字符串
+
+双引号字符串支持转义序列：
+
+```just
+string-with-tab             := "\t"
+string-with-newline         := "\n"
+string-with-carriage-return := "\r"
+string-with-double-quote    := "\""
+string-with-slash           := "\\"
+string-with-no-newline      := "\
+"
+```
+
+```sh
+$ just --evaluate
+"tring-with-carriage-return := "
+string-with-double-quote    := """
+string-with-newline         := "
+"
+string-with-no-newline      := ""
+string-with-slash           := "\"
+string-with-tab             := "     "
+```
+
+字符串可以包含换行符：
+
+```just
+single := '
+hello
+'
+
+double := "
+goodbye
+"
+```
+
+单引号字符串不支持转义序列：
+
+```just
+escapes := '\t\n\r\"\\'
+```
+
+```sh
+$ just --evaluate
+escapes := "\t\n\r\"\\"
+```
+
+支持单引号和双引号字符串的缩进版本，以三个单引号或三个双引号为界。缩进的字符串行被删除了所有非空行所共有的前导空白：
+
+```just
+# 这个字符串执行结果为 `foo\nbar\n`
+x := '''
+  foo
+  bar
+'''
+
+# 这个字符串执行结果为 `abc\n  wuv\nbar\n`
+y := """
+  abc
+    wuv
+  xyz
+"""
+```
+
+与未缩进的字符串类似，缩进的双引号字符串处理转义序列，而缩进的单引号字符串则忽略转义序列。转义序列的处理是在取消缩进后进行的。取消缩进的算法不考虑转义序列产生的空白或换行。
+
+### 错误忽略
+
+通常情况下，如果一个命令返回一个非零的退出状态，将停止执行。要想在一个命令之后继续执行，即使它失败了，需要在命令前加上 `-`：
+
+```just
+foo:
+  -cat foo
+  echo 'Done!'
+```
+
+```sh
+$ just foo
+cat foo
+cat: foo: No such file or directory
+echo 'Done!'
+Done!
+```
+
+### 函数
+
+`just` 提供了一些内置函数，在编写配方时可能很有用。
+
+#### 系统信息
+
+- `arch()` — 指令集结构。可能的值是：`"aarch64"`, `"arm"`, `"asmjs"`, `"hexagon"`, `"mips"`, `"msp430"`, `"powerpc"`, `"powerpc64"`, `"s390x"`, `"sparc"`, `"wasm32"`, `"x86"`, `"x86_64"`, 和 `"xcore"`。
+- `os()` — 操作系统，可能的值是: `"android"`, `"bitrig"`, `"dragonfly"`, `"emscripten"`, `"freebsd"`, `"haiku"`, `"ios"`, `"linux"`, `"macos"`, `"netbsd"`, `"openbsd"`, `"solaris"`, 和 `"windows"`。
+- `os_family()` — 操作系统系列；可能的值是：`"unix"` 和 `"windows"`。
+
+例如：
+
+```just
+system-info:
+  @echo "This is an {{arch()}} machine".
+```
+
+```sh
+$ just system-info
+This is an x86_64 machine
+```
+
+`os_family()` 函数可以用来创建跨平台的 `justfile`，使其可以在不同的操作系统上工作。一个例子，见 [cross-platform.just](https://github.com/casey/just/blob/master/examples/cross-platform.just) 文件。
+
+#### 环境变量
+
+- `env_var(key)` — 获取名称为 `key` 的环境变量，如果不存在则终止。
+
+```just
+home_dir := env_var('HOME')
+
+test:
+  echo "{{home_dir}}"
+```
+
+```sh
+$ just
+/home/user1
+```
+
+- `env_var_or_default(key, default)` — 获取名称为 `key` 的环境变量，如果不存在则返回 `default`。
+
+#### 调用目录
+
+- `invocation_directory()` - 获取 `just` 被调用时当前目录所对应的绝对路径，在 `just` 改变路径并执行相应命令前。
+
+例如，要对 "当前目录" 下的文件调用 `rustfmt`（从用户/调用者的角度看），使用以下规则：
+
+```just
+rustfmt:
+  find {{invocation_directory()}} -name \*.rs -exec rustfmt {} \;
+```
+
+另外，如果你的命令需要从当前目录运行，你可以使用如下方式：
+
+```just
+build:
+  cd {{invocation_directory()}}; ./some_script_that_needs_to_be_run_from_here
+```
+
+#### Justfile 和 Justfile 目录
+
+- `justfile()` - 取得当前 `justfile` 的路径。
+
+- `justfile_directory()` - 取得当前 `justfile` 文件父目录的路径。
+
+例如，运行一个相对于当前 `justfile` 位置的命令：
+
+```just
+script:
+  ./{{justfile_directory()}}/scripts/some_script
+```
+
+#### Just 可执行程序
+
+- `just_executable()` - `just` 可执行文件的绝对路径。
+
+例如：
+
+```just
+executable:
+  @echo The executable is at: {{just_executable()}}
+```
+
+```sh
+$ just
+The executable is at: /bin/just
+```
+
+#### 字符串处理
+
+- `quote(s)` - 用 `'\''` 替换所有的单引号，并在 `s` 的首尾添加单引号。这足以为许多 Shell 转义特殊字符，包括大多数 Bourne Shell 的后代。
+- `replace(s, from, to)` - 将 `s` 中的所有 `from` 替换为 `to`。
+- `replace_regex(s, regex, replacement)` - 将 `s` 中所有的 `regex` 替换为 `replacement`。正则表达式由 [Rust `regex` 包](https://docs.rs/regex/latest/regex/) 提供。参见 [语法文档](https://docs.rs/regex/latest/regex/#syntax) 以了解使用示例。
+- `trim(s)` - 去掉 `s` 的首尾空格。
+- `trim_end(s)` - 去掉 `s` 的尾部空格。
+- `trim_end_match(s, substr)` - 删除与 `substr` 匹配的 `s` 的后缀。
+- `trim_end_matches(s, substr)` - 反复删除与 `substr` 匹配的 `s` 的后缀。
+- `trim_start(s)` - 去掉 `s` 的首部空格。
+- `trim_start_match(s, substr)` - 删除与 `substr` 匹配的 `s` 的前缀。
+- `trim_start_matches(s, substr)` - 反复删除与 `substr` 匹配的 `s` 的前缀。
+
+#### 大小写转换
+
+- `capitalize(s)`<sup>1.7.0</sup> - 将 `s` 的第一个字符转换成大写字母，其余的转换成小写字母。
+- `kebabcase(s)`<sup>1.7.0</sup> - 将 `s` 转换为 `kebab-case`。
+- `lowercamelcase(s)`<sup>1.7.0</sup> - 将 `s` 转换为小驼峰形式：`lowerCamelCase`。
+- `lowercase(s)` - 将 `s` 转换为全小写形式。
+- `shoutykebabcase(s)`<sup>1.7.0</sup> - 将 `s` 转换为 `SHOUTY-KEBAB-CASE`。
+- `shoutysnakecase(s)`<sup>1.7.0</sup> - 将 `s` 转换为 `SHOUTY_SNAKE_CASE`。
+- `snakecase(s)`<sup>1.7.0</sup> - 将 `s` 转换为 `snake_case`。
+- `titlecase(s)`<sup>1.7.0</sup> - 将 `s` 转换为 `Title Case`。
+- `uppercamelcase(s)`<sup>1.7.0</sup> - 将 `s` 转换为 `UpperCamelCase`。
+- `uppercase(s)` - 将 `s` 转换为大写形式。
+
+#### 路径操作
+
+##### 非可靠的
+
+- `absolute_path(path)` - 将当前工作目录中到相对路径 `path` 的路径转换为绝对路径。在 `/foo` 目录通过 `absolute_path("./bar.txt")` 可以得到 `/foo/bar.txt`。
+- `extension(path)` - 获取 `path` 的扩展名。`extension("/foo/bar.txt")` 结果为 `txt`。
+- `file_name(path)` - 获取 `path` 的文件名，去掉任何前面的目录部分。`file_name("/foo/bar.txt")` 的结果为 `bar.txt`。
+- `file_stem(path)` - 获取 `path` 的文件名，不含扩展名。`file_stem("/foo/bar.txt")` 的结果为 `bar`。
+- `parent_directory(path)` - 获取 `path` 的父目录。`parent_directory("/foo/bar.txt")` 的结果为 `/foo`。
+- `without_extension(path)` - 获取 `path` 不含扩展名部分。`without_extension("/foo/bar.txt")` 的结果为 `/foo/bar`。
+
+这些函数可能会失败，例如，如果一个路径没有扩展名，则将停止执行。
+
+##### 可靠的
+
+- `clean(path)` - 通过删除多余的路径分隔符、中间的 `.` 和 `..` 来简化 `path`。`clean("foo//bar")` 结果为 `foo/bar`，`clean("foo/..")` 为 `.`，`clean("foo/./bar")` 结果为 `foo/bar`。
+- `join(a, b…)` - *这个函数在 Unix 上使用 `/`，在 Windows 上使用 `\`，这可能会导致非预期的行为。`/` 操作符，例如，`a / b`，总是使用 `/`，应该被考虑作为替代，除非在 Windows 上特别指定需要 `\`。* 将路径 `a` 和 路径 `b` 拼接在一起。`join("foo/bar", "baz")` 结果为 `foo/bar/baz`。它接受两个或多个参数。
+
+#### 文件系统访问
+
+- `path_exists(path)` - 如果路径指向一个存在的文件或目录，则返回 `true`，否则返回 `false`。也会遍历符号链接，如果路径无法访问或指向一个无效的符号链接，则返回 `false`。
+
+##### 错误报告
+
+- `error(message)` - 终止执行并向用户报告错误 `message`。
+
+#### UUID 和哈希值生成
+
+- `sha256(string)` - 以十六进制字符串形式返回 `string` 的 SHA-256 哈希值。
+- `sha256_file(path)` - 以十六进制字符串形式返回 `path` 处的文件的 SHA-256 哈希值。
+- `uuid()` - 返回一个随机生成的 UUID。
+
+### 配方属性
+
+配方可以通过添加属性注释来改变其行为。
+
+
+| 名称                                | 描述                                   |
+| ----------------------------------- | -------------------------------------- |
+| `[no-cd]`<sup>1.9.0</sup>           | 在执行配方之前不要改变目录。           |
+| `[no-exit-message]`<sup>1.7.0</sup> | 如果配方执行失败，不要打印错误信息。   |
+| `[linux]`<sup>1.8.0</sup>           | 在Linux上启用配方。                    |
+| `[macos]`<sup>1.8.0</sup>           | 在MacOS上启用配方。                    |
+| `[unix]`<sup>1.8.0</sup>            | 在Unixes上启用配方。                   |
+| `[windows]`<sup>1.8.0</sup>         | 在Windows上启用配方。                  |
+| `[private]`<sup>1.10.0</sup>        | 参见 [私有配方](#私有配方). |
+
+#### 启用和禁用配方<sup>1.8.0</sup>
+
+`[linux]`, `[macos]`, `[unix]` 和 `[windows]` 属性是配置属性。默认情况下，配方总是被启用。一个带有一个或多个配置属性的配方只有在其中一个或多个配置处于激活状态时才会被启用。
+
+这可以用来编写因运行的操作系统不同，其行为也不同的 `justfile`。以下 `justfile` 中的 `run` 配方将编译和运行 `main.c`，并且根据操作系统的不同而使用不同的C编译器，同时使用正确的二进制产物名称：
+
+```just
+[unix]
+run:
+  cc main.c
+  ./a.out
+
+[windows]
+run:
+  cl main.c
+  main.exe
+```
+
+#### 禁用变更目录<sup>1.9.0</sup>
+
+`just` 通常在执行配方时将当前目录设置为包含 `justfile` 的目录，你可以通过 `[no-cd]` 属性来禁用此行为。这可以用来创建使用调用目录相对路径或者对当前目录进行操作的配方。
+
+例如这个 `commit` 配方：
+
+```just
+[no-cd]
+commit file:
+  git add {{file}}
+  git commit
+```
+
+可以使用相对于当前目录的路径，因为 `[no-cd]` 可以防止 `just` 在执行 `commit` 配方时改变当前目录。
+
+### 使用反引号的命令求值
+
+反引号可以用来存储命令的求值结果：
+
+```just
+localhost := `dumpinterfaces | cut -d: -f2 | sed 's/\/.*//' | sed 's/ //g'`
+
+serve:
+  ./serve {{localhost}} 8080
+```
+
+缩进的反引号，以三个反引号为界，与字符串缩进的方式一样，会被去掉缩进：
+
+````just
+# This backtick evaluates the command `echo foo\necho bar\n`, which produces the value `foo\nbar\n`.
+stuff := ```
+    echo foo
+    echo bar
+  ```
+````
+
+参见 [字符串](#字符串) 部分，了解去除缩进的细节。
+
+反引号内不能以 `#!` 开头。这种语法是为将来的升级而保留的。
+
+### 条件表达式
+
+`if` / `else` 表达式评估不同的分支，取决于两个表达式是否评估为相同的值：
+
+```just
+foo := if "2" == "2" { "Good!" } else { "1984" }
+
+bar:
+  @echo "{{foo}}"
+```
+
+```sh
+$ just bar
+Good!
+```
+
+也可以用于测试不相等：
+
+```just
+foo := if "hello" != "goodbye" { "xyz" } else { "abc" }
+
+bar:
+  @echo {{foo}}
+```
+
+```sh
+$ just bar
+xyz
+```
+
+还支持与正则表达式进行匹配：
+
+```just
+foo := if "hello" =~ 'hel+o' { "match" } else { "mismatch" }
+
+bar:
+  @echo {{foo}}
+```
+
+```sh
+$ just bar
+match
+```
+
+正则表达式由 [Regex 包](https://github.com/rust-lang/regex) 提供，其语法在 [docs.rs](https://docs.rs/regex/1.5.4/regex/#syntax) 上有对应文档。由于正则表达式通常使用反斜线转义序列，请考虑使用单引号的字符串字面值，这将使斜线不受干扰地传递给正则分析器。
+
+条件表达式是短路的，这意味着它们只评估其中的一个分支。这可以用来确保反引号内的表达式在不应该运行的时候不会运行。
+
+```just
+foo := if env_var("RELEASE") == "true" { `get-something-from-release-database` } else { "dummy-value" }
+```
+
+条件语句也可以在配方中使用：
+
+```just
+bar foo:
+  echo {{ if foo == "bar" { "hello" } else { "goodbye" } }}
+```
+
+注意最后的 `}` 后面的空格! 没有这个空格，插值将被提前结束。
+
+多个条件语句可以被连起来：
+
+```just
+foo := if "hello" == "goodbye" {
+  "xyz"
+} else if "a" == "a" {
+  "abc"
+} else {
+  "123"
+}
+
+bar:
+  @echo {{foo}}
+```
+
+```sh
+$ just bar
+abc
+```
+
+### 出现错误停止执行
+
+可以用 `error` 函数停止执行。比如：
+
+```just
+foo := if "hello" == "goodbye" {
+  "xyz"
+} else if "a" == "b" {
+  "abc"
+} else {
+  error("123")
+}
+```
+
+在运行时产生以下错误：
+
+```
+error: Call to function `error` failed: 123
+   |
+16 |   error("123")
+```
+
+### 从命令行设置变量
+
+变量可以从命令行进行覆盖。
+
+```just
+os := "linux"
+
+test: build
+  ./test --test {{os}}
+
+build:
+  ./build {{os}}
+```
+
+```sh
+$ just
+./build linux
+./test --test linux
+```
+
+任何数量的 `NAME=VALUE` 形式的参数都可以在配方前传递：
+
+```sh
+$ just os=plan9
+./build plan9
+./test --test plan9
+```
+
+或者你可以使用 `--set` 标志：
+
+```sh
+$ just --set os bsd
+./build bsd
+./test --test bsd
+```
+
+### 获取和设置环境变量
+
+#### 导出 `just` 变量
+
+以 `export` 关键字为前缀的赋值将作为环境变量导出到配方中：
+
+```just
+export RUST_BACKTRACE := "1"
+
+test:
+  # 如果它崩溃了，将打印一个堆栈追踪
+  cargo test
+```
+
+以 `$` 为前缀的参数将被作为环境变量导出：
+
+```just
+test $RUST_BACKTRACE="1":
+  # 如果它崩溃了，将打印一个堆栈追踪
+  cargo test
+```
+
+导出的变量和参数不会被导出到同一作用域内反引号包裹的表达式里。
+
+```just
+export WORLD := "world"
+# This backtick will fail with "WORLD: unbound variable"
+BAR := `echo hello $WORLD`
+```
+
+```just
+# Running `just a foo` will fail with "A: unbound variable"
+a $A $B=`echo $A`:
+  echo $A $B
+```
+
+当 [export](#导出) 被设置时，所有的 `just` 变量都将作为环境变量被导出。
+
+#### 从环境中获取环境变量
+
+来自环境的环境变量会自动传递给配方：
+
+```just
+print_home_folder:
+  echo "HOME is: '${HOME}'"
+```
+
+```sh
+$ just
+HOME is '/home/myuser'
+```
+
+#### 从 `.env` 文件加载环境变量
+
+如果 [dotenv-load](#环境变量加载) 被设置，`just` 将从 `.env` 文件中加载环境变量。该文件中的变量将作为环境变量提供给配方。参见 [环境变量集成](#环境变量加载) 以获得更多信息。
+
+#### 从环境变量中设置 `just` 变量
+
+环境变量可以通过函数 `env_var()` 和 `env_var_or_default()` 传入到 `just` 变量。
+参见 [environment-variables](#环境变量)。
 
 ### 配方参数
 

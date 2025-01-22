@@ -6,11 +6,12 @@ use super::*;
 #[strum(serialize_all = "kebab-case")]
 #[serde(rename_all = "kebab-case")]
 #[strum_discriminants(name(AttributeDiscriminant))]
-#[strum_discriminants(derive(EnumString))]
+#[strum_discriminants(derive(EnumString, Ord, PartialOrd))]
 #[strum_discriminants(strum(serialize_all = "kebab-case"))]
 pub(crate) enum Attribute<'src> {
   Confirm(Option<StringLiteral<'src>>),
   Doc(Option<StringLiteral<'src>>),
+  ExitMessage,
   Extension(StringLiteral<'src>),
   Group(StringLiteral<'src>),
   Linux,
@@ -18,23 +19,27 @@ pub(crate) enum Attribute<'src> {
   NoCd,
   NoExitMessage,
   NoQuiet,
+  Openbsd,
   PositionalArguments,
   Private,
   Script(Option<Interpreter<'src>>),
   Unix,
   Windows,
+  WorkingDirectory(StringLiteral<'src>),
 }
 
 impl AttributeDiscriminant {
   fn argument_range(self) -> RangeInclusive<usize> {
     match self {
       Self::Confirm | Self::Doc => 0..=1,
-      Self::Group | Self::Extension => 1..=1,
-      Self::Linux
+      Self::Group | Self::Extension | Self::WorkingDirectory => 1..=1,
+      Self::ExitMessage
+      | Self::Linux
       | Self::Macos
       | Self::NoCd
       | Self::NoExitMessage
       | Self::NoQuiet
+      | Self::Openbsd
       | Self::PositionalArguments
       | Self::Private
       | Self::Unix
@@ -75,6 +80,7 @@ impl<'src> Attribute<'src> {
     Ok(match discriminant {
       AttributeDiscriminant::Confirm => Self::Confirm(arguments.into_iter().next()),
       AttributeDiscriminant::Doc => Self::Doc(arguments.into_iter().next()),
+      AttributeDiscriminant::ExitMessage => Self::ExitMessage,
       AttributeDiscriminant::Extension => Self::Extension(arguments.into_iter().next().unwrap()),
       AttributeDiscriminant::Group => Self::Group(arguments.into_iter().next().unwrap()),
       AttributeDiscriminant::Linux => Self::Linux,
@@ -82,6 +88,7 @@ impl<'src> Attribute<'src> {
       AttributeDiscriminant::NoCd => Self::NoCd,
       AttributeDiscriminant::NoExitMessage => Self::NoExitMessage,
       AttributeDiscriminant::NoQuiet => Self::NoQuiet,
+      AttributeDiscriminant::Openbsd => Self::Openbsd,
       AttributeDiscriminant::PositionalArguments => Self::PositionalArguments,
       AttributeDiscriminant::Private => Self::Private,
       AttributeDiscriminant::Script => Self::Script({
@@ -93,15 +100,26 @@ impl<'src> Attribute<'src> {
       }),
       AttributeDiscriminant::Unix => Self::Unix,
       AttributeDiscriminant::Windows => Self::Windows,
+      AttributeDiscriminant::WorkingDirectory => {
+        Self::WorkingDirectory(arguments.into_iter().next().unwrap())
+      }
     })
+  }
+
+  pub(crate) fn discriminant(&self) -> AttributeDiscriminant {
+    self.into()
   }
 
   pub(crate) fn name(&self) -> &'static str {
     self.into()
   }
+
+  pub(crate) fn repeatable(&self) -> bool {
+    matches!(self, Attribute::Group(_))
+  }
 }
 
-impl<'src> Display for Attribute<'src> {
+impl Display for Attribute<'_> {
   fn fmt(&self, f: &mut Formatter) -> fmt::Result {
     write!(f, "{}", self.name())?;
 
@@ -109,15 +127,18 @@ impl<'src> Display for Attribute<'src> {
       Self::Confirm(Some(argument))
       | Self::Doc(Some(argument))
       | Self::Extension(argument)
-      | Self::Group(argument) => write!(f, "({argument})")?,
+      | Self::Group(argument)
+      | Self::WorkingDirectory(argument) => write!(f, "({argument})")?,
       Self::Script(Some(shell)) => write!(f, "({shell})")?,
       Self::Confirm(None)
       | Self::Doc(None)
+      | Self::ExitMessage
       | Self::Linux
       | Self::Macos
       | Self::NoCd
       | Self::NoExitMessage
       | Self::NoQuiet
+      | Self::Openbsd
       | Self::PositionalArguments
       | Self::Private
       | Self::Script(None)

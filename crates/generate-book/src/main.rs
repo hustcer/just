@@ -49,7 +49,7 @@ struct Chapter<'a> {
   language: Language,
 }
 
-impl<'a> Chapter<'a> {
+impl Chapter<'_> {
   fn title(&self) -> String {
     if self.index == 0 {
       return self.language.introduction().into();
@@ -185,12 +185,19 @@ fn main() -> Result {
         HeadingLevel::H5 => 4,
         HeadingLevel::H6 => 5,
       };
-      writeln!(
+
+      write!(
         summary,
-        "{}- [{}]({filename}.md)",
+        "{}- [{}](",
         " ".repeat(indent * 4),
         chapter.title(),
       )?;
+
+      if chapter.events.len() > 3 {
+        write!(summary, "{filename}.md")?;
+      }
+
+      writeln!(summary, ")")?;
 
       filenames.insert(filename);
     }
