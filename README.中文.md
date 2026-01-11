@@ -1857,9 +1857,9 @@ $ just foo
 | `[confirm]`<sup>1.17.0</sup> | 配方 | 执行配方前需要确认。 |
 | `[confirm(PROMPT)]`<sup>1.23.0</sup> | 配方 | 执行配方前需要确认，使用自定义提示语。 |
 | `[default]`<sup>1.43.0</sup> | 配方 | 将配方用作模块的默认配方。 |
-| `[doc(DOC)]`<sup>1.27.0</sup> | 模块、配方 | 将配方或模块的[文档注释](#documentation-comments)设置为 `DOC`。 |
+| `[doc(DOC)]`<sup>1.27.0</sup> | 模块、配方 | 将配方或模块的[文档注释](#文档注释)设置为 `DOC`。 |
 | `[extension(EXT)]`<sup>1.32.0</sup> | 配方 | 将 shebang 配方脚本的文件扩展名设置为 `EXT`。如果需要句点，`EXT` 应包含句点。 |
-| `[group(NAME)]`<sup>1.27.0</sup> | 模块、配方 | 将配方或模块放入[分组](#groups) `NAME` 中。 |
+| `[group(NAME)]`<sup>1.27.0</sup> | 模块、配方 | 将配方或模块放入[分组](#分组) `NAME` 中。 |
 | `[linux]`<sup>1.8.0</sup> | 配方 | 在 Linux 上启用配方。 |
 | `[macos]`<sup>1.8.0</sup> | 配方 | 在 MacOS 上启用配方。 |
 | `[metadata(METADATA)]`<sup>1.42.0</sup> | 配方 | 将 `METADATA` 附加到配方。 |
@@ -1868,10 +1868,10 @@ $ just foo
 | `[no-quiet]`<sup>1.23.0</sup> | 配方 | 覆盖全局静默配方设置，始终回显配方输出。 |
 | `[openbsd]`<sup>1.38.0</sup> | 配方 | 在 OpenBSD 上启用配方。 |
 | `[parallel]`<sup>1.42.0</sup> | 配方 | 并行运行此配方的依赖。 |
-| `[positional-arguments]`<sup>1.29.0</sup> | 配方 | 为此配方启用[位置参数](#positional-arguments)。 |
-| `[private]`<sup>1.10.0</sup> | 别名、配方 | 将配方、别名或变量设为私有。参见[私有配方](#private-recipes)。 |
-| `[script]`<sup>1.33.0</sup> | 配方 | 将配方作为脚本执行。更多详情请参阅[脚本配方](#script-recipes)。 |
-| `[script(COMMAND)]`<sup>1.32.0</sup> | 配方 | 将配方作为由 `COMMAND` 解释的脚本执行。更多详情请参阅[脚本配方](#script-recipes)。 |
+| `[positional-arguments]`<sup>1.29.0</sup> | 配方 | 为此配方启用[位置参数](#位置参数)。 |
+| `[private]`<sup>1.10.0</sup> | 别名、配方 | 将配方、别名或变量设为私有。参见[私有配方](#私有配方)。 |
+| `[script]`<sup>1.33.0</sup> | 配方 | 将配方作为脚本执行。更多详情请参阅[脚本配方](#脚本配方)。 |
+| `[script(COMMAND)]`<sup>1.32.0</sup> | 配方 | 将配方作为由 `COMMAND` 解释的脚本执行。更多详情请参阅[脚本配方](#脚本配方)。 |
 | `[unix]`<sup>1.8.0</sup> | 配方 | 在 Unix 系统上启用配方（包括 MacOS）。 |
 | `[windows]`<sup>1.8.0</sup> | 配方 | 在 Windows 上启用配方。 |
 | `[working-directory(PATH)]`<sup>1.38.0</sup> | 配方 | 设置配方的工作目录。`PATH` 可以是相对路径或绝对路径。如果是相对路径，则相对于默认工作目录解释。 |
@@ -2042,11 +2042,11 @@ stuff := ```
   ```
 ````
 
-有关去缩进的详细信息，请参阅[字符串](#strings)部分。
+有关去缩进的详细信息，请参阅[字符串](#字符串)部分。
 
 反引号不能以 `#!` 开头。此语法保留供将来升级使用。
 
-[`shell(…)` 函数](#external-commands)提供了更通用的机制来调用外部命令，包括执行变量内容作为命令的能力，以及向命令传递参数的能力。
+[`shell(…)` 函数](#外部命令)提供了更通用的机制来调用外部命令，包括执行变量内容作为命令的能力，以及向命令传递参数的能力。
 
 ### 条件表达式
 
@@ -2221,7 +2221,7 @@ a $A $B=`echo $A`:
   echo $A $B
 ```
 
-当 [export](#export) 设置被启用时，所有 `just` 变量都会作为环境变量导出。
+当 [export](#导出) 设置被启用时，所有 `just` 变量都会作为环境变量导出。
 
 #### 取消导出环境变量<sup>1.29.0</sup>
 
@@ -2256,7 +2256,7 @@ HOME is '/home/myuser'
 
 #### 从环境变量设置 `just` 变量
 
-可以使用 `env()` 函数将环境变量传播到 `just` 变量中。参见[环境变量](#environment-variables)。
+可以使用 `env()` 函数将环境变量传播到 `just` 变量中。参见[环境变量](#环境变量)。
 
 ### 配方参数
 
