@@ -21,9 +21,9 @@
 </div>
 <br>
 
-`just` 是一个方便的方式来保存和运行项目特定的命令。
+`just` 为您提供一种保存和运行项目特有命令的便捷方式。
 
-本文档也可以作为[在线手册](https://just.systems/man/en/)阅读。在线手册反映的是最新发布版本，而 [GitHub 上的 readme](https://github.com/casey/just/blob/master/README.md) 反映的是最新的 master 分支。
+本文档也可以作为[在线手册](https://just.systems/man/en/)阅读。在线手册反映的是最新发布版本，而 [GitHub 上的 README](https://github.com/casey/just/blob/master/README.md) 反映的是最新的 master 分支。
 
 (English version is available [here](https://github.com/casey/just/blob/master/README.md), check it out!)
 
@@ -42,17 +42,17 @@ Yay, all your tests passed!
 
 `just` 有大量实用的功能，相比 `make` 有很多改进：
 
-- `just` 是一个命令运行器，而不是构建系统，因此它避免了 [`make` 的许多复杂性和怪异之处](#able-to-avoid-idiosyncrasies-of-make)。不需要 `.PHONY` 配方！
+- `just` 是一个命令运行器，而不是构建系统，因此它避免了 [`make` 的许多复杂性和怪异行为](#just-避免了-make-的哪些特性)。无需 `.PHONY` 配方！
 
-- 支持 Linux、MacOS、Windows 和其他合理的 Unix 系统，无需额外依赖。（不过如果你的系统没有 `sh`，你需要[选择一个不同的 shell](#shell)。）
+- 支持 Linux、MacOS、Windows 及其他类 Unix 系统，无需额外依赖。（不过如果你的系统没有 `sh`，则需要[选择其他 shell](#shell)。）
 
-- 错误信息具体且信息丰富，语法错误会连同其源代码上下文一起报告。
+- 错误输出具体且信息丰富，语法错误会连同其源代码上下文一起报告。
 
 - 配方可以接受[命令行参数](#配方参数)。
 
-- 尽可能静态地解析错误。未知的配方和循环依赖会在任何东西运行之前被报告。
+- 错误尽可能在静态阶段就被检测出来。未知配方和循环依赖会在实际运行前就被报告。
 
-- `just` [加载 `.env` 文件](#dotenv-设置)，使填充环境变量变得容易。
+- `just` 可[加载 `.env` 文件](#dotenv-设置)，方便配置环境变量。
 
 - 可以从[命令行列出](#列出可用配方)配方。
 
@@ -64,20 +64,20 @@ Yay, all your tests passed!
 
 - 还有[更多功能](https://just.systems/man/en/)！
 
-如果你需要 `just` 的帮助，请随时开一个 issue 或在 [Discord](https://discord.gg/ezYScXR) 上联系我。功能请求和错误报告随时欢迎！
+如果你需要 `just` 相关帮助，请随时创建一个 issue 或在 [Discord](https://discord.gg/ezYScXR) 上联系我。功能请求和错误报告随时欢迎！
 
 安装
 ----
 
 ### 前提条件
 
-`just` 应该可以在任何具有合理 `sh` 的系统上运行，包括 Linux、MacOS 和 BSD 系列。
+`just` 可以在任何具备标准 `sh` 的系统上运行，包括 Linux、macOS 和 BSD 系列。
 
 #### Windows
 
 在 Windows 上，`just` 可以与 [Git for Windows](https://git-scm.com)、[GitHub Desktop](https://desktop.github.com) 或 [Cygwin](http://www.cygwin.com) 提供的 `sh` 一起工作。安装后，`sh` 必须在你想要调用 `just` 的 shell 的 `PATH` 中可用。
 
-如果你不想安装 `sh`，你可以使用 `shell` 设置来使用你选择的 shell。
+如果不想安装 `sh`，可以通过 `shell` 设置指定所用的 shell。
 
 比如 PowerShell：
 
@@ -340,9 +340,9 @@ list:
 
 ### 预编译二进制文件
 
-适用于 Linux、MacOS 和 Windows 的预编译二进制文件可以在[发布页面](https://github.com/casey/just/releases)找到。
+适用于 Linux、macOS 和 Windows 的预编译二进制文件可在[发布页面](https://github.com/casey/just/releases)下载。
 
-你可以使用以下命令在 Linux、MacOS 或 Windows 上下载最新版本，只需将 `DEST` 替换为你想要放置 `just` 的目录：
+你可以使用以下命令在 Linux、macOS 或 Windows 上下载最新版本，只需将 `DEST` 替换为你想要安装 `just` 的目录：
 
 ```console
 curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to DEST
@@ -382,7 +382,7 @@ shasum --algorithm 256 --ignore-missing --check SHA256SUMS
 
 `just` 可以通过几种方式在 GitHub Actions 上安装。
 
-在 MacOS 上使用 GitHub Actions 运行器预装的包管理器 `brew install just`，在 Windows 上使用 `choco install just`。
+在 macOS 上使用 GitHub Actions 运行器预装的包管理器 `brew install just`，在 Windows 上使用 `choco install just`。
 
 使用 [extractions/setup-just](https://github.com/extractions/setup-just)：
 
@@ -406,7 +406,7 @@ shasum --algorithm 256 --ignore-missing --check SHA256SUMS
 
 [just-install](https://npmjs.com/package/just-install) 可用于在 Node.js 应用程序中自动安装 `just`。
 
-`just` 是 npm scripts 的一个很好的、更健壮的替代品。如果你想在 Node.js 应用程序的依赖项中包含 `just`，`just-install` 将作为 `npm install` 命令的一部分安装本地的、特定于平台的二进制文件。这消除了每个开发人员使用上述过程之一独立安装 `just` 的需要。安装后，`just` 命令将在 npm scripts 或 npx 中工作。对于想要使项目设置过程尽可能简单的团队来说，这非常棒。
+`just` 是一款出色且更稳定的 npm 脚本替代工具。如果你想在 Node.js 项目的依赖中包含 `just`，使用 `just-install` 会在执行 `npm install` 时自动安装适配当前平台的二进制版本。这样就无需每位开发者单独安装 `just`。安装后，`just` 命令可在 npm 脚本中或通过 npx 直接运行。对于希望简化项目搭建流程的团队来说，这非常实用。
 
 更多信息，请参阅 [just-install README 文件](https://github.com/brombal/just-install#readme)。
 
@@ -426,7 +426,7 @@ shasum --algorithm 256 --ignore-missing --check SHA256SUMS
 编辑器支持
 ----------
 
-`justfile` 语法与 `make` 足够接近，你可能想告诉你的编辑器对 `just` 使用 `make` 语法高亮。
+`justfile` 语法与 `make` 足够接近，你可以告诉你的编辑器对 `just` 使用 `make` 语法高亮。
 
 ### Vim 和 Neovim
 
@@ -504,11 +504,11 @@ VS Code 的扩展[可在这里获取](https://github.com/nefrob/vscode-just)。
 
 ### Kakoune
 
-Kakoune 开箱即用地支持 `justfile` 语法高亮，感谢 TeddyDD。
+Kakoune 原生支持 `justfile` 语法高亮，感谢 TeddyDD。
 
 ### Helix
 
-[Helix](https://helix-editor.com/) 从 23.05 版本开始开箱即用地支持 `justfile` 语法高亮。
+[Helix](https://helix-editor.com/) 从 23.05 版本起原生支持 `justfile` 语法高亮。
 
 ### Sublime Text
 
@@ -516,7 +516,7 @@ Kakoune 开箱即用地支持 `justfile` 语法高亮，感谢 TeddyDD。
 
 ### Micro
 
-[Micro](https://micro-editor.github.io/) 开箱即用地支持 Justfile 语法高亮，感谢 [tomodachi94](https://github.com/tomodachi94)。
+[Micro](https://micro-editor.github.io/) 原生支持 Justfile 语法高亮，感谢 [tomodachi94](https://github.com/tomodachi94)。
 
 ### Zed
 
@@ -537,7 +537,7 @@ Kakoune 开箱即用地支持 `justfile` 语法高亮，感谢 TeddyDD。
 快速开始
 --------
 
-参阅安装部分了解如何在你的计算机上安装 `just`。尝试运行 `just --version` 以确保它已正确安装。
+参阅[安装](#安装)部分了解如何在你的计算机上安装 `just`。运行 `just --version` 确保安装正确。
 
 有关语法概述，请查看[这个速查表](https://cheatography.com/linux-china/cheat-sheets/justfile/)。
 
@@ -571,7 +571,7 @@ $ just another-recipe
 This is another recipe.
 ```
 
-`just` 在运行每个命令之前会将其打印到标准错误输出，这就是为什么 `echo 'This is a recipe!'` 被打印出来了。对于以 `@` 开头的行，这个打印会被抑制，这就是为什么 `echo 'This is another recipe.'` 没有被打印出来。
+`just` 在执行每条命令前会将其输出到标准错误，所以 `echo 'This is a recipe!'` 会被打印出来。以 `@` 开头的行会抑制这个输出，所以 `echo 'This is another recipe.'` 不会被打印。
 
 如果命令失败，配方会停止运行。这里 `cargo publish` 只有在 `cargo test` 成功时才会运行：
 
@@ -681,7 +681,7 @@ Available recipes:
     lint
 ```
 
-[子模块](#modules1190)中的配方可以使用 `just --list PATH` 列出，其中 `PATH` 是以空格或 `::` 分隔的模块路径：
+[子模块](#模块)中的配方可以使用 `just --list PATH` 列出，其中 `PATH` 是以空格或 `::` 分隔的模块路径：
 
 ```
 $ cat justfile
@@ -780,7 +780,7 @@ make web
 python3 -m http.server -d out 8000
 ```
 
-请注意，带参数的配方会吞掉参数，即使这些参数与其他配方的名称匹配：
+注意，带参数的配方会"吞掉"后续参数，即使这些参数与其他配方的名称相同：
 
 ```just
 build project:
